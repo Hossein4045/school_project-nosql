@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { background: #19162f; color: #faf7ef; font-family: Vazirmatn, Tahoma, sans-serif; }
+button { -webkit-tap-highlight-color: transparent; }
+::selection { background: #8eedc6; color: #19162f; }
+.deck-grid { background-image: linear-gradient(rgba(174,157,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(174,157,255,.055) 1px, transparent 1px); background-size: 38px 38px; }
+.glass { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(18px); }
+.slide-in { animation: slideIn .35s ease both; }
+@keyframes slideIn { from { opacity: 0; transform: translateY(9px) scale(.995); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
