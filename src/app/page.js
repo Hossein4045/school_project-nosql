@@ -139,8 +139,14 @@ export default function Home() {
   const [overview, setOverview] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const slide = slides[current];
-  const go = useCallback((n) => setCurrent(Math.max(0, Math.min(slides.length - 1, n))), []);
+const go = useCallback((n) => {
+  setCurrent(Math.max(0, Math.min(slides.length - 1, n)));
 
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+}, []);
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); setCurrent(v => Math.min(slides.length - 1, v + 1)); }
